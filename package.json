@@ -1,0 +1,11 @@
+{
+  "name": "clocking-app",
+  "description": "a fine piece of express art for punching buttons",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "3.x"
+    , "mongoose": "*"
+    , "underscore": "*"
+    , "require-dir": "*"
+  }
+}
