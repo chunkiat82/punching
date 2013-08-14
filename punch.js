@@ -20,31 +20,14 @@ var quotes = [
 
 dust.helpers['formatDate'] = function (chunk, context, bodies, params) {
     var value = dust.helpers.tap(params.value, chunk, context);
-
+    var format = dust.helpers.tap(params.format, chunk, context);
     var date = moment(value);
 
-    return chunk.write(date.format("Do MMM YYYY"));
-};
-
-dust.helpers['formatTime'] = function (chunk, context, bodies, params) {
-    var value = dust.helpers.tap(params.value, chunk, context),
-        timestamp,
-        month,
-        date,
-        year,
-        seconds,
-        minutes,
-        hours;
-    
-    timestamp = new Date(value);
-    month = timestamp.getMonth() + 1;
-    date = timestamp.getDate();
-    year = timestamp.getFullYear();
-    seconds = timestamp.getSeconds();
-    minutes = timestamp.getMinutes();
-    hour = timestamp.getHours();
-
-    return chunk.write(hour + ':' + minutes + ':' + seconds);
+    //"Do MMM YYYY"
+    if (format == null){
+        format = "Do MMM YYYY"
+    }
+    return chunk.write(date.format(format));
 };
 
 app.engine('dust', cons.dust);

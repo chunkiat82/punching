@@ -21,8 +21,8 @@
   			<tbody>
 	  			<tr>
 	  				<td class="warning">{@formatDate value="{today}" /}</td>
-	  				<td class="success">{@formatTime value="{punchIn}" /}</td>
-	  				<td class="danger"></span>{@formatTime value="{punchOut}" /}</td>
+	  				<td class="success">{@formatDate value="{punchIn}" format="HH:mm:SS"/}</td>
+	  				<td class="danger"></span>{@formatDate value="{punchOut}" format="HH:mm:SS"/}</td>
 	  			</tr>
 	  		</tbody>
   			{/records}
