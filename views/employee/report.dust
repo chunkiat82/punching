@@ -10,14 +10,22 @@
 	<div class="jumbotron text-center">
 		<a href="/employee/{name}">Back to punching</a>
 		{?records}
-  		<div class="list-group">
-  		<a href="#" class="list-group-item"><span class="label label-info">DATE</span> <span class="label label-success">IN</span> <span class="label label-danger">OUT</span></a>
-		  {#records}
-		  	<a href="#" class="list-group-item"><span class="label label-info">{@formatDate value="{today}" /}</span> <span class="label label-success">{@formatTime value="{punchIn}" /}</span> 
-		  	<span class="label label-danger">{@formatTime value="{punchOut}" /}</span></a>
-		  {/records}
-		  <a href="#" class="list-group-item"><span class="label label-info">DATE</span> <span class="label label-success">IN</span> <span class="label label-danger">OUT</span></a>
-		</div>
+		<table class="table table-striped ">
+  			<thead>
+  				<th>Date</th>
+  				<th>IN</th>
+  				<th>OUT</th>
+  			</thead>
+  			{#records}
+  			<tbody>
+	  			<tr>
+	  				<td class="warning">{@formatDate value="{today}" /}</td>
+	  				<td class="success">{@formatTime value="{punchIn}" /}</td>
+	  				<td class="danger">{@formatTime value="{punchOut}" /}</td>
+	  			</tr>
+	  		</tbody>
+  			{/records}
+		</table>  		
 		{/records}
 	</div>	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
