@@ -70,7 +70,12 @@
 
 		});
 
-		return res.render("employee/index", {
+		/*return res.render("employee/index", {
+			name: id,
+			date: now,
+			type: type
+		});*/
+		res.json(200, {
 			name: id,
 			date: now,
 			type: type
@@ -118,8 +123,7 @@
 						}
 					})
 				} else {
-					if (type='OUT')
-					PunchDayRecord.update({
+					if (type = 'OUT') PunchDayRecord.update({
 						_id: rec._id
 					}, {
 						$set: {
@@ -219,10 +223,10 @@
 
 		var records = PunchDayRecord.find({
 			'employee': id
-		}).exec(function(err, recs) {		
+		}).exec(function(err, recs) {
 			return res.render("employee/report", {
-				records: recs
-				,name:id
+				records: recs,
+				name: id
 			});
 		});
 

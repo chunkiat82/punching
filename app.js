@@ -83,8 +83,7 @@ app.configure(function() {
 app.get('/employee/:id', routes.employee.read);
 app.get('/employee/:id/punch', routes.employee.read);
 //ideally there is action mapped to type
-app.get('/employee/:id/punch/:type', routes.employee.punch);
-app.post('/employee/:id/punch', routes.employee.punch);
+app.post('/employee/:id/punch/:type', routes.employee.punch);
 app.get('/employee/:id/report', routes.employee.report);
 app.get('/employee/:id/reportdetails', routes.employee.reportDetails);
 

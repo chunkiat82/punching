@@ -13,7 +13,7 @@ var PunchDayRecordSchema = new Schema({
 //need some valiation between today and punch in and punch out
 PunchDayRecordSchema.pre('save', function(next){
   self = this;
-  //self.today.setHours(0,0,0,0);
+  self.today.setHours(0,0,0,0);
   next();
 })
 exports.model = mongoose.model('PunchDayRecord', PunchDayRecordSchema, 'punch_day_record');

@@ -21,3 +21,26 @@
     border: none;
     text-indent: -99999px;
 }
+
+left {
+    float: left;
+    margin-right: 2%;
+    text-align: right;
+    width: 48%;
+}
+
+right {
+    float: right;
+    margin-left: 2%;
+    text-align: left;
+    width: 48%;
+}
+
+img.iconButton {
+    cursor: pointer;
+    margin: 5% 0 0;
+    width: 74%;
+}
+.fullHeight{
+    height:100%;
+}
