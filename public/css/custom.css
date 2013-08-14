@@ -1,0 +1,23 @@
+
+.body{
+
+}
+.margin20topdown{
+    margin:20 0;
+}
+.login {
+    background:url(../assets/images/actions/login.png) no-repeat;
+    cursor:pointer;
+    width: 256px;
+    height: 256px;
+    border: none;
+    text-indent: -99999px;
+}
+.logout{
+    background:url(../assets/images/actions/logout.png) no-repeat;
+    cursor:pointer;
+    width: 256px;
+    height: 256px;
+    border: none;
+    text-indent: -99999px;
+}

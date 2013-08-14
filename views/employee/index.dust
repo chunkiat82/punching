@@ -1,0 +1,44 @@
+
+<html>
+	<head>
+		<title>Punch</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="/css/custom.css" rel="stylesheet" type="text/css" media="screen"/>
+	</head>
+	<body>
+		
+		<div class="jumbotron text-center">
+	  		<h2>{name}, let's punch!</h2>
+	  		<!--
+	  			<form action="/employee/{name}/punch" method="post">
+				<input class="login" type="submit" name="type" value="in" src=""/>
+				<input class="logout" type="submit" name="type" value="out" src=""/>
+				<input type="hidden" name="name" value="{name}"/>
+			</form> 		
+			-->
+			<div class="margin20topdown">
+				<a href="/employee/{name}/punch/in"><img src="/assets/images/transparent.png" class="login"></a>
+				<a href="/employee/{name}/punch/out"><img src="/assets/images/transparent.png" class="logout"></a>
+			</div>
+			{?date}
+				{@if cond="'{type}' == 'IN'"}
+		   			<div class="alert alert-success text-center">
+		   				<button type="button" class="close" data-dismiss="alert">&times;</button>
+		   				<p>{@formatDate value="{date}"/}</p>
+		   				<a href="/employee/{name}/report">Report</a>
+		   			</div>
+		 		{:else}
+		   			<div class="alert alert-danger text-center">
+		   				<button type="button" class="close" data-dismiss="alert">&times;</button>
+		   				<p>{@formatDate value="{date}"/}</p>
+		   				<a href="/employee/{name}/report">Report</a>
+		   			</div>
+		 		{/if}		
+			{/date}
+		</div>	
+		<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,24 @@
+
+<html>
+<head>
+	<title>Punch</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="/css/custom.css" rel="stylesheet" type="text/css" media="screen"/>
+</head>
+<body>
+	
+	<div class="jumbotron text-center">
+		{?records}
+  		<div class="list-group">
+		  {#records}
+		  	<a href="#" class="list-group-item">{type} - {@formatDate value="{punch}" /}</a>
+		  {/records}
+		</div>
+		{/records}
+	</div>	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+</body>
+</html>
