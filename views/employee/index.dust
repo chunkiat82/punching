@@ -11,7 +11,7 @@
 	<body>
 		<div id = "alert_placeholder"></div>
 		<div class="jumbotron text-center fullHeight">
-	  		<h2>{name}, let's punch!</h2>
+	  		<h2>{name}, punch!</h2>
 			<div>
 				<left>
 					<a class="punchLink" id="punchIn" href="/employee/{name}/punch/in" type="in" reportLink="/employee/{name}/report"><img class="iconButton" src="/assets/images/actions/login.png"></a>
