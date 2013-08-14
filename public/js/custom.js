@@ -10,7 +10,7 @@ function bind() {
 		e.preventDefault();
 
 		var self = $(this);
-		var link = self.attr("href");
+		var link = self.attr("link");
 		var type = self.attr("type");
 
 		$.post(link, function(data) {
