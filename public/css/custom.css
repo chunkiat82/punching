@@ -12,6 +12,12 @@ right {
     text-align: left;
     width: 48%;
 }
+one {
+    float: left;
+    margin-left: 2%;
+    text-align: center;
+    width: 98%;
+}
 
 img.iconButton {
     cursor: pointer;
@@ -20,4 +26,8 @@ img.iconButton {
 }
 .fullHeight{
     height:100%;
+}
+
+.give_me_top_space{
+    margin-top:20px;
 }

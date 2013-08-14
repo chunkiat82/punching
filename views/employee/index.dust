@@ -17,8 +17,12 @@
 				<right>
 					<a class="punchLink" id="punchOut" href="/employee/{name}/punch/out" type="out" reportLink="/employee/{name}/report"><img class="iconButton" src="/assets/images/actions/logout.svg"></a>
 				</right>
+				<one>
+					<div class="give_me_top_space">
+						<a  href="/employee/{name}/report">Summary Report<a/>
+					</div>
+				</one>
 			</div>
-			
 		</div>	
 		
 		<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
