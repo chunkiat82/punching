@@ -4,6 +4,7 @@
 	<title>Daily Punch</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="/css/bootstrap-glyphicons.css" rel="stylesheet" type="text/css" />
 	<link href="/css/custom.css" rel="stylesheet" type="text/css" media="screen"/>
 </head>
 <body>	
@@ -13,15 +14,15 @@
 		<table class="table table-striped ">
   			<thead>
   				<th>Date</th>
-  				<th>IN</th>
-  				<th>OUT</th>
+  				<th>IN<span class="glyphicon glyphicon-arrow-right"></span></th>
+  				<th>OUT<span class="glyphicon glyphicon-arrow-left"></th>
   			</thead>
   			{#records}
   			<tbody>
 	  			<tr>
 	  				<td class="warning">{@formatDate value="{today}" /}</td>
 	  				<td class="success">{@formatTime value="{punchIn}" /}</td>
-	  				<td class="danger">{@formatTime value="{punchOut}" /}</td>
+	  				<td class="danger"></span>{@formatTime value="{punchOut}" /}</td>
 	  			</tr>
 	  		</tbody>
   			{/records}
