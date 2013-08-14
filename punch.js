@@ -30,6 +30,13 @@ dust.helpers['formatDate'] = function (chunk, context, bodies, params) {
     return chunk.write(date.format(format));
 };
 
+dust.helpers['formatCalendar'] = function (chunk, context, bodies, params) {
+    var value = dust.helpers.tap(params.value, chunk, context); 
+    var date = moment(value);
+
+    return chunk.write(date.calendar());
+};
+
 app.engine('dust', cons.dust);
 
 

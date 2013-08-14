@@ -11,18 +11,16 @@
 	<div class="jumbotron text-center">
 		<a href="/employee/{name}">Back to punching</a>
 		{?records}
-		<table class="table table-striped ">
-  			<thead>
-  				<th>Date</th>
+		<table class="table">
+  			<thead>  				
   				<th>IN<span class="glyphicon glyphicon-arrow-right"></span></th>
   				<th>OUT<span class="glyphicon glyphicon-arrow-left"></th>
   			</thead>
   			{#records}
   			<tbody>
-	  			<tr>
-	  				<td class="warning">{@formatDate value="{today}" /}</td>
-	  				<td class="success">{@formatDate value="{punchIn}" format="HH:mm:SS"/}</td>
-	  				<td class="danger"></span>{@formatDate value="{punchOut}" format="HH:mm:SS"/}</td>
+	  			<tr>	  				
+	  				<td><span class="label label-success">{@formatCalendar value="{punchIn}"/}</span></td>
+	  				<td><span class="label label-danger">{@formatDate value="{punchOut}" format="HH:mm:SS"/}</span></td>
 	  			</tr>
 	  		</tbody>
   			{/records}
