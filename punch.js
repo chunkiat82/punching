@@ -8,6 +8,8 @@ var dust = require('dustjs-linkedin');
 dust.helper = require('dustjs-helpers');
 var cons = require('consolidate');
 require("mongoose").connect('localhost', 'soho_punch');
+var moment = require('moment');
+moment().format();
 
 var quotes = [
   { author : 'Audrey Hepburn', text : "Nothing is impossible, the word itself says 'I'm possible'!"},
@@ -17,24 +19,11 @@ var quotes = [
 ];
 
 dust.helpers['formatDate'] = function (chunk, context, bodies, params) {
-    var value = dust.helpers.tap(params.value, chunk, context),
-        timestamp,
-        month,
-        date,
-        year,
-        seconds,
-        minutes,
-        hours;
-    
-    timestamp = new Date(value);
-    month = timestamp.getMonth() + 1;
-    date = timestamp.getDate();
-    year = timestamp.getFullYear();
-    seconds = timestamp.getSeconds();
-    minutes = timestamp.getMinutes();
-    hour = timestamp.getHours();
+    var value = dust.helpers.tap(params.value, chunk, context);
 
-    return chunk.write(date + '/' + month + '/' + year + ' ' + hour + ':' + minutes + ':' + seconds);
+    var date = moment(value);
+
+    return chunk.write(date.format("Do MMM YYYY"));
 };
 
 dust.helpers['formatTime'] = function (chunk, context, bodies, params) {

@@ -223,7 +223,8 @@
 
 		var records = PunchDayRecord.find({
 			'employee': id
-		}).exec(function(err, recs) {
+		}).sort({today: 'desc'}).exec(function(err, recs) {
+			console.log(recs);
 			return res.render("employee/report", {
 				records: recs,
 				name: id

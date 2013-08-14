@@ -11,5 +11,6 @@
     , "dustjs-linkedin": "*"
     , "dustjs-helpers": "*"
     , "consolidate": "*"
+    , "moment": "*"
   }
 }

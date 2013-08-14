@@ -11,9 +11,12 @@
 		<a href="/employee/{name}">Back to punching</a>
 		{?records}
   		<div class="list-group">
+  		<a href="#" class="list-group-item"><span class="label label-info">DATE</span> <span class="label label-success">IN</span> <span class="label label-danger">OUT</span></a>
 		  {#records}
-		  	<a href="#" class="list-group-item">{@formatDate value="{today}" /}, {@formatTime value="{punchIn}" /} - {@formatTime value="{punchOut}" /}</a>
+		  	<a href="#" class="list-group-item"><span class="label label-info">{@formatDate value="{today}" /}</span> <span class="label label-success">{@formatTime value="{punchIn}" /}</span> 
+		  	<span class="label label-danger">{@formatTime value="{punchOut}" /}</span></a>
 		  {/records}
+		  <a href="#" class="list-group-item"><span class="label label-info">DATE</span> <span class="label label-success">IN</span> <span class="label label-danger">OUT</span></a>
 		</div>
 		{/records}
 	</div>	
