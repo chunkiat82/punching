@@ -16,7 +16,7 @@ function bind() {
 		$.post(link, function(data) {
 			var date = new Date(data.date);
 			var day = moment(date);
-			var text = '<p>'+day.format("Do MMM HH:MM:SS") + '</p>';
+			var text = '<p>'+day.format("Do MMM HH:mm:SS") + '</p>';
 			bootstrap_alert.alert(text, type);
 		});
 	});
