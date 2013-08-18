@@ -23,7 +23,6 @@ PunchDayRecordSchema.pre('save', function(next) {
 PunchDayRecordSchema.virtual('totalHours').get(function() {
 	var start = moment(this.punchIn);
 	var end = moment(this.punchOut);
-
 	return end.diff(start, 'hours', true).toFixed(2);
 });
 exports.model = mongoose.model('PunchDayRecord', PunchDayRecordSchema, 'punch_day_record');

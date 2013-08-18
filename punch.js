@@ -11,6 +11,20 @@ require("mongoose").connect('localhost', 'soho_punch');
 var moment = require('moment');
 moment().format();
 
+moment.lang('en', {
+    calendar : {
+        lastDay : '[Yesterday at] LT',
+        sameDay : '[Today at] LT',
+        nextDay : '[Tmr at] LT',
+        //lastWeek : '[Last] ddd [at] LT',
+        lastWeek : 'ddd [at] LT',
+        /* next week is never a use case so removing last */
+        nextWeek : 'ddd [at] LT',
+        sameElse : 'L'
+    }
+});
+
+
 var quotes = [
   { author : 'Audrey Hepburn', text : "Nothing is impossible, the word itself says 'I'm possible'!"},
   { author : 'Walt Disney', text : "You may not realize it when it happens, but a kick in the teeth may be the best thing in the world for you"},

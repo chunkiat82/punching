@@ -8,7 +8,7 @@
 	exports.read = function(req, res) {
 
 		var id = req.param('id');
-
+		id = id.toLowerCase();
 		Employee.findOne({
 			_id: id
 		}, function(err, data) {
@@ -45,7 +45,7 @@
 	exports.create = function(req, res) {
 
 		var id = req.param('name');
-		console.log(id);
+		id = id.toLowerCase();
 
 		Employee.findOne({
 			_id: id

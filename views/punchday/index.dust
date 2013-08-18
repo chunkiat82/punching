@@ -16,16 +16,18 @@
 			<li class="active">id</li>
 		</ul>
 		<form method="POST" action="/punchday/{_id}">
+			<input name="today" value="{today}" type="hidden"/>
 			<table class="table">
 				<thead>  				
-					<th>IN<span class="glyphicon glyphicon-arrow-right"></span></th>
-					<th>OUT<span class="glyphicon glyphicon-arrow-left"></th>
+					<th>Time Period</th>
 					<th>Action(s)</th>
 				</thead>
 				<tbody>
 					<tr>	  				
-						<td><input type="time" class="form-control" name="punchIn" placeholder="punch in" value="{punchIn}"></td>
-						<td><input type="time" class="form-control" name="punchOut" placeholder="punch out" value="{punchOut}"></td>
+						<td>
+							IN<input type="time" class="form-control" name="punchIn" placeholder="punch in" value="{@formatDate value="{punchIn}" format="HH:mm:ss"/}">
+							OUT<input type="time" class="form-control" name="punchOut" placeholder="punch out" value="{@formatDate value="{punchOut}" format="HH:mm:ss"/}">
+						</td>						
 						<td><input type="submit" value="Update"/></span></td>
 					</tr>
 				</tbody>

@@ -19,7 +19,7 @@
 		<table class="table">
   			<thead>  				
   				<th>IN<span class="glyphicon glyphicon-arrow-right"></span></th>
-  				<th>OUT<span class="glyphicon glyphicon-arrow-left"></th>
+  				<th>OUT<span class="glyphicon glyphicon-arrow-left"></span></th>
   				<th>Hours</th>
   			</thead>
   			{#records}

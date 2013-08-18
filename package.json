@@ -12,5 +12,6 @@
     , "dustjs-helpers": "*"
     , "consolidate": "*"
     , "moment": "*"
+    , "twix": "*"
   }
 }

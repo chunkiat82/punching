@@ -17,6 +17,7 @@
 		{?records}
 
 		<form role="form">
+			<input type="hidden" name="date" value="{today}"/>
 			<table class="table">
 	  			<thead>  				
 	  				<th>IN<span class="glyphicon glyphicon-arrow-right"></span></th>
@@ -27,7 +28,7 @@
 	  			<tbody>
 		  			<tr>	  				
 		  				<td><span class="label label-success">{@formatCalendar value="{punchIn}"/}</span></td>
-		  				<td><span class="label label-danger">{@formatDate value="{punchOut}" format="HH:mm:SS"/}</span></td>
+		  				<td><span class="label label-danger">{@formatDate value="{punchOut}" format="hh:mm:ss"/}</span></td>
 		  				<td><a href="/punchday/{_id}">Edit</a></span></td>
 		  			</tr>
 		  		</tbody>

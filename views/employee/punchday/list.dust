@@ -11,7 +11,7 @@
 <body>	
 	<div class="jumbotron text-center">
 		<ul class="breadcrumb">
-			<li><a href="/">Home</a></li>			
+			<li><a href="/employee/{name}">Home</a></li>			
 			<li class="active">Punch Day Records</li>
 		</ul>
 		{?records}
