@@ -14,10 +14,10 @@
 	  		<h3 id="punchName" text="{name}, punch it!">{name}, punch it!</h3>
 			<div>
 				<left>
-					<a class="punchLink" id="punchIn" href="#" link="/employee/{name}/punch" type="in" reportLink="/employee/{name}/report"><img class="iconButton" src="/assets/images/actions/login.png"></a>
+					<a class="punchLink" id="punchIn" href="#" link="/employee/{name}/punch" type="in" reportLink="/employee/{name}/report"><img class="iconButton" src="/assets/images/actions/login.svg"></a>
 				</left>
 				<right>
-					<a class="punchLink" id="punchOut" href="#" link="/employee/{name}/punch" type="out" reportLink="/employee/{name}/report"><img class="iconButton" src="/assets/images/actions/logout.png"></a>
+					<a class="punchLink" id="punchOut" href="#" link="/employee/{name}/punch" type="out" reportLink="/employee/{name}/report"><img class="iconButton" src="/assets/images/actions/logout.svg"></a>
 				</right>
 				<one>
 					<div class="give_me_top_space">
