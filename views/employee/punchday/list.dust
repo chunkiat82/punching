@@ -27,7 +27,7 @@
 	  			<tbody>
 		  			<tr>	  				
 		  				<td><span class="label label-success">{@formatCalendar value="{punchIn}"/}</span></td>
-		  				<td><span class="label label-danger">{@formatDate value="{punchOut}" format="HH:mm:SS"/}</span></td>
+		  				<td><span class="label label-danger">{@formatDate value="{punchOut}" format="HH:mm:ss"/}</span></td>
 		  				<td><a href="/punchday/{_id}">Edit</a></span></td>
 		  			</tr>
 		  		</tbody>
