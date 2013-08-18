@@ -1,4 +1,3 @@
-
 <html>
 <head>
 	<title>Daily Punch</title>
@@ -12,27 +11,30 @@
 <body>	
 	<div class="jumbotron text-center">
 		<ul class="breadcrumb">
-			<li><a href="/employee/{name}">Home</a></li>			
-			<li class="active">Reporting</li>
+			<li><a href="/">Home</a></li>			
+			<li class="active">Punch Day Records</li>
 		</ul>
 		{?records}
-		<table class="table">
-  			<thead>  				
-  				<th>IN<span class="glyphicon glyphicon-arrow-right"></span></th>
-  				<th>OUT<span class="glyphicon glyphicon-arrow-left"></th>
-  				<th>Hours</th>
-  			</thead>
-  			{#records}
-  			<tbody>
-	  			<tr>	  				
-	  				<td><span class="label label-success">{@formatCalendar value="{punchIn}"/}</span></td>
-	  				<td><span class="label label-danger">{@formatDate value="{punchOut}" format="HH:mm:SS"/}</span></td>
-	  				<td><span class="label label-info">{totalHours}</span></td>
-	  			</tr>
-	  		</tbody>
-  			{/records}
-		</table>  		
+
+		<form role="form">
+			<table class="table">
+	  			<thead>  				
+	  				<th>IN<span class="glyphicon glyphicon-arrow-right"></span></th>
+	  				<th>OUT<span class="glyphicon glyphicon-arrow-left"></th>
+	  				<th>Action(s)</th>
+	  			</thead>
+	  			{#records}
+	  			<tbody>
+		  			<tr>	  				
+		  				<td><span class="label label-success">{@formatCalendar value="{punchIn}"/}</span></td>
+		  				<td><span class="label label-danger">{@formatDate value="{punchOut}" format="HH:mm:SS"/}</span></td>
+		  				<td><a href="/punchday/{_id}">Edit</a></span></td>
+		  			</tr>
+		  		</tbody>
+  				{/records}
+			</table>  		
 		{/records}
+		
 	</div>	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>

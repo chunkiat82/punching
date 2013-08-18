@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Daily Punch</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="/css/bootstrap-glyphicons.css" rel="stylesheet" type="text/css" />
+	<link href="/css/custom.css" rel="stylesheet" type="text/css" media="screen"/>
+</head>
+<body>	
+	<div class="jumbotron text-center">
+		<ul class="breadcrumb">
+			<li><a href="/">Home</a></li>			
+			<li><a href="/punchday/">Punch Day Records</a></li>
+			<li class="active">id</li>
+		</ul>
+		<form method="POST" action="/punchday/{_id}">
+			<table class="table">
+				<thead>  				
+					<th>IN<span class="glyphicon glyphicon-arrow-right"></span></th>
+					<th>OUT<span class="glyphicon glyphicon-arrow-left"></th>
+					<th>Action(s)</th>
+				</thead>
+				<tbody>
+					<tr>	  				
+						<td><input type="time" class="form-control" name="punchIn" placeholder="punch in" value="{punchIn}"></td>
+						<td><input type="time" class="form-control" name="punchOut" placeholder="punch out" value="{punchOut}"></td>
+						<td><input type="submit" value="Update"/></span></td>
+					</tr>
+				</tbody>
+			</table>  	
+		</form>	
+	
+		
+	</div>	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+</body>
+</html>

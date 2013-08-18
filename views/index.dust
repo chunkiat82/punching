@@ -11,18 +11,13 @@
 	<body>
 		<div id = "alert_placeholder"></div>
 		<div class="jumbotron text-center fullHeight">
-	  		<h2 id="punchName" text="{name}, punch it!">{name}, punch it!</h2>
+	  		<h2>Give yourself a nickname!</h2>
 			<div>
-				<left>
-					<a class="punchLink" id="punchIn" href="#" link="/employee/{name}/punch" type="in" reportLink="/employee/{name}/report"><img class="iconButton" src="/assets/images/actions/login.png"></a>
-				</left>
-				<right>
-					<a class="punchLink" id="punchOut" href="#" link="/employee/{name}/punch" type="out" reportLink="/employee/{name}/report"><img class="iconButton" src="/assets/images/actions/logout.png"></a>
-				</right>
 				<one>
-					<div class="give_me_top_space">
-						<a  href="/employee/{name}/report">Summary Report<a/>
-					</div>
+					<form method="POST" action="/employee">
+						<input type="text" class="form-control" name="name" placeholder="nickname" value="">
+						<button type="submit" class="btn btn-success">Start Punching</button>
+					</form>
 				</one>
 			</div>
 		</div>	

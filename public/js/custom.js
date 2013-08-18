@@ -1,7 +1,6 @@
 $(function() {
 	moment().format();
 	bind(); // Handler for .ready() called.
-
 });
 
 function bind() {
@@ -13,12 +12,35 @@ function bind() {
 		var link = self.attr("link");
 		var type = self.attr("type");
 
-		$.post(link, function(data) {
-			var date = new Date(data.date);
-			var day = moment(date);
-			var text = '<p>'+day.format("Do MMM HH:mm:SS") + '</p>';
-			bootstrap_alert.alert(text, type);
+		$.ajax({
+			type: "POST",
+			url: link,
+			data: {
+				"type": type
+			},
+			success: function(data) {
+				var date = new Date(data.date);
+				var day = moment(date);
+				var text = '<p>' + day.format("Do MMM HH:mm:SS") + '</p>';
+				//bootstrap_alert.alert(text, type);
+				
+				
+			}
 		});
+		
+		displayAndReset('<span class="label label-'+(type=='in'?'success':'danger')+'">Punched!</span>');
+
+		function displayAndReset(htmlText){
+			
+			$('#punchName').html(htmlText);
+
+			function setBack(){
+				$('#punchName').html($('#punchName').attr('text'));
+			}
+
+			setTimeout(setBack,400);
+		}
+		
 	});
 
 

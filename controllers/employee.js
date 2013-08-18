@@ -1,11 +1,13 @@
 	var Employee = require('../models/employee').model;
 	var PunchRecord = require('../models/punch_record').model;
-	var PunchDayRecord = require('../models/punch_day_record').model;
+	var PunchDay = require('../models/punch_day_record').model;
+
+	var punch = {};
+	exports.punch = punch;
 
 	exports.read = function(req, res) {
 
 		var id = req.param('id');
-		console.log(id);
 
 		Employee.findOne({
 			_id: id
@@ -40,16 +42,65 @@
 
 	}
 
-	exports.punch = function(req, res) {
+	exports.create = function(req, res) {
+
+		var id = req.param('name');
+		console.log(id);
+
+		Employee.findOne({
+			_id: id
+		}, function(err, data) {
+
+			if (err) {
+				console.log(500);
+				return res.json(500, {});
+			}
+			if (!data) {
+				var employee = new Employee({
+					_id: id
+				});
+				employee.save(function(err, data) {
+					if (err) {
+						console.log(err);
+						return res.render('employee/index', {
+							name: "no name"
+						});
+					}
+					res.redirect("employee/"+data._id);					
+				});
+			} else {
+				res.redirect("employee/"+data._id);
+			}
+
+		});
+
+	}
+
+	exports.punchday = {
+		list: function(req, res) {
+			var id = req.param('id');
+
+			var records = PunchDay.find({
+				'employee': id
+			}).sort({
+				today: 'desc'
+			}).exec(function(err, recs) {
+				console.log(recs);
+				return res.render("employee/punchday/list", {
+					records: recs,
+					name: id
+				});
+			});
+
+		}
+	}
+
+	punch.update = function(req, res) {
 
 		var type = req.param('type').toUpperCase();
 		var id = req.param('id');
 		var now = new Date();
 		var today = new Date(new Date(now).setHours(0, 0, 0, 0));
-		console.log("now and today");
-		console.log(now);
-		console.log(today);
-		console.log("now and today");
 		Employee.findOne({
 			_id: id
 		}, function(err, data) {
@@ -70,11 +121,6 @@
 
 		});
 
-		/*return res.render("employee/index", {
-			name: id,
-			date: now,
-			type: type
-		});*/
 		res.json(200, {
 			name: id,
 			date: now,
@@ -102,16 +148,14 @@
 
 		function saveUpdatePunchDate() {
 
-			var pdRec = PunchDayRecord.findOne({
+			var pdRec = PunchDay.findOne({
 				'employee': id,
 				'today': today
 			}).exec();
 
 			pdRec.then(function(rec) {
-				console.log('pdRec entered');
-
 				if (rec == null) {
-					var pdRec = new PunchDayRecord({
+					var pdRec = new PunchDay({
 						today: today,
 						punchIn: now,
 						punchOut: now,
@@ -123,7 +167,7 @@
 						}
 					})
 				} else {
-					if (type = 'OUT') PunchDayRecord.update({
+					if (type = 'OUT') PunchDay.update({
 						_id: rec._id
 					}, {
 						$set: {
@@ -131,13 +175,28 @@
 						}
 					}).exec();
 				}
-
-
-
 			})
 		}
 
 	};
+
+	exports.report = function(req, res) {
+		console.log('report function');
+		var id = req.param('id');
+
+		var records = PunchDay.find({
+			'employee': id
+		}).sort({
+			today: 'desc'
+		}).exec(function(err, recs) {
+			console.log(recs);
+			return res.render("employee/report", {
+				records: recs,
+				name: id
+			});
+		});
+
+	}
 
 	exports.reportDetails = function(req, res) {
 		var id = req.param('id');
@@ -217,20 +276,4 @@
 
 	}
 
-	exports.report = function(req, res) {
-		console.log('report function');
-		var id = req.param('id');
-
-		var records = PunchDayRecord.find({
-			'employee': id
-		}).sort({today: 'desc'}).exec(function(err, recs) {
-			console.log(recs);
-			return res.render("employee/report", {
-				records: recs,
-				name: id
-			});
-		});
-
-
-
-	}
+	
