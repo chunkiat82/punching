@@ -14,8 +14,10 @@
 	  		<h2>Give yourself a nickname!</h2>
 			<div>
 				<one>
-					<form method="POST" action="/employee">
-						<input type="text" class="form-control" name="name" placeholder="nickname" value="">
+					<form role="form" method="POST" action="/employee">
+						<div class="form-group">						
+							<input type="text" class="form-control" name="name" placeholder="nickname" value="">
+						</div>						
 						<button type="submit" class="btn btn-success">Start Punching</button>
 					</form>
 				</one>
