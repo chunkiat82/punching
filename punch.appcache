@@ -1,0 +1,13 @@
+CACHE MANIFEST
+/css/custom.css
+/css/bootstrap.min.css
+/js/bootstrap.min.js
+/js/custom.js
+http://code.jquery.com/jquery-2.0.3.min.js
+https://rawgithub.com/timrwood/moment/2.1.0/min/moment.min.js
+
+NETWORK:
+*
+
+FALLBACK:
+/html/ /offline.html

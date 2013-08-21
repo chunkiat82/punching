@@ -1,5 +1,5 @@
-
-<html>
+<!DOCTYPE HTML>
+<html manifest="punch.appcache">
 	<head>
 		<title>Punch</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
