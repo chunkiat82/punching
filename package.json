@@ -13,5 +13,6 @@
     , "consolidate": "*"
     , "moment": "*"
     , "twix": "*"
+    , "connect-cache-manifest": "*"
   }
 }
